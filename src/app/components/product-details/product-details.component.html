@@ -1,10 +1,33 @@
 <p>product-details works!</p>
-<div *ngIf="product">
-  <h2>{{ product.name }}</h2>
-  <p>Description: {{ product.description }}</p>
-  <p>Price: ${{ product.price }}</p>
-  <p>Category: {{ product.category }}</p>
-  <p>Created At: {{ product.createdAt }}</p>
-  <p>ID: {{ product.id }}</p>
+<div *ngIf="editedProduct">
+  <div>
+    <h2>Name: </h2>
+    <input [(ngModel)]="editedProduct.name" />
+  </div>
+  <div>
+    <h2>Description: </h2>
+    <input [(ngModel)]="editedProduct.description" />
+  </div>
+  <div>
+    <h2>Price: </h2>
+    <input [(ngModel)]="editedProduct.price" />
+  </div>
+  <div>
+    <h2>Category: </h2>
+    <input [(ngModel)]="editedProduct.category" />
+  </div>
+  <div>
+    <h2>Created At: </h2>
+    <input [(ngModel)]="editedProduct.createdAt" />
+  </div>
+  <div>
+    <h2>ID: </h2>
+    <input [(ngModel)]="editedProduct.id" disabled/>
+  </div>
+  <div>
+    <button (click)="saveProductDetails(editedProduct.id)">
+      Save
+    </button>
+  </div>
 </div>
 <button (click)="goBack()">Back</button>
